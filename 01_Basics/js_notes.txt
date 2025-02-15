@@ -1,0 +1,96 @@
+It is a synchronous single-threaded language
+
+In memory/variable Enviroment things are stored in key value pairs
+
+Working of JavaScript:
+
+    ---> first Global Execution Context is Created in which the code is executed in two phases: 
+        --->Memory Creation Phase
+            --->In memory creation phase the memory is allocated to all the variables in the code;{here the variables have assigned value "Undefined" and the function have the code written in it }
+        --->Phase  2
+            --->In this phase the actual value passed in the code are assigned to the variables
+
+Call Stacks maintains the order of execution of execution contexts
+
+Other names of call stack are
+    * Execution Context Stack
+    * Program Stack
+    * Control Stack
+    * Runtime Stack
+    * Machine Stack
+
+if function is a arrow function it will be considered as object and will be assigned value "undefined"
+
+Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.
+This means you can use variables and functions before their declaration in the code.
+
+empty file is the shortest javascript Program
+
+"undefiend" is kind of a placeholder placed in the memory like it says that this variable is currently not assigned any thing
+
+loosely typed language or also known as weakly typed language as after declaring the variable we can store any types of data in it like int,double,string....
+
+Scope in javascript is directly proportional to lexical Enviroment
+
+lexical means in a heiarchy or sequence or inorder
+    e.g. if 
+        function a(){ 
+        var b = 0;
+        function c();
+    }
+
+    here we will say "c" function is lexically inside "a" function
+
+"let" and "const" declaration are hoisted
+
+the Temporal Dead Zone (TDZ) is the period between entering a block scope and when a variable declared with let or const is actually initialized. During this phase, the variable exists in memory but is not yet accessible, and any attempt to access it will result in a ReferenceError.
+
+    ----> Avoid Bugs: It prevents the accidental use of variables before they are explicitly declared.
+    ----> Enforce Declaration Order: Developers must declare and initialize their variables before using them, which can lead to clearer and less error-prone code.
+
+The window object represents the browser's window and serves as the global object for client-side scripts. This means that all global variables and functions you define in your scripts automatically become properties or methods of the window object.
+
+Diff b/w let and const 
+    ---->let:
+            Block-scoped
+            Can be reassigned
+            Does not require immediate initialization
+    ---->const:
+            Block-scoped
+            Cannot be reassigned (immutable binding)
+            Must be initialized at the time of declaration
+            For objects/arrays, the binding is constant but the contents can still be modified
+
+SyntaxError:
+            Cause: Incorrect code syntax (parsing errors).
+            Example: Missing a closing parenthesis or bracket.
+
+TypeError:
+            Cause: Performing an operation on a value of an inappropriate type.
+            Example: Trying to call a non-function or accessing a property on undefined.
+            
+ReferenceError:
+            Cause: Referring to an undeclared or out-of-scope variable.
+            Example: Accessing a variable that hasn’t been defined.
+
+A "Block" is a grouping of one or more statements enclosed within curly braces {}. It is commonly used to define the scope of code, especially in control structures like loops, conditionals, and functions.
+
+let and const are block scope variable i.e,  they can't be accessed outside a perticular Block
+
+Variable Shadowing – When a variable in a local scope (e.g., inside a function) has the same name as a variable in an outer scope, making the outer variable inaccessible.
+
+Function Shadowing – Overriding a function in a specific scope.
+
+A closure is a function that remembers the variables from its outer scope even after the outer function has finished executing.
+
+
+"use strict"; // treat all JS code as newer version
+
+Type of "undefined" is undefined
+Type of "null" is object
+
+
+console.log("2" > 1); // automatically converted into number hence give true
+
+console.log("2" === 2); // check datatype
+
