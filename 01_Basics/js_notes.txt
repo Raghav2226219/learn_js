@@ -111,3 +111,9 @@ Reference Type/ Non primitive
     functions
 
 JS is dynamically typed language
+
+
+Memories 
+    Stack   ==> primitive 
+    Heap    ==> non primitive
+
