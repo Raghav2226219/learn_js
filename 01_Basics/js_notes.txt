@@ -94,3 +94,20 @@ console.log("2" > 1); // automatically converted into number hence give true
 
 console.log("2" === 2); // check datatype
 
+primitive
+
+    string
+    number
+    boolean
+    null
+    undefined
+    symbol
+    bigint
+
+Reference Type/ Non primitive
+
+    arrays
+    objects
+    functions
+
+JS is dynamically typed language
