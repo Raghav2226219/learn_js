@@ -119,3 +119,7 @@ Memories
 
 date is a object
 months start with 0 in JS
+
+
+slice doesn't change original array where as splice changes the original array i.e, the arr between the range of splice gets cut from the original array
+
