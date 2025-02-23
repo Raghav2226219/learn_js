@@ -117,3 +117,5 @@ Memories
     Stack   ==> primitive 
     Heap    ==> non primitive
 
+date is a object
+months start with 0 in JS
