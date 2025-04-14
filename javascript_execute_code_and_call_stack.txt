@@ -1,0 +1,13 @@
+JavaScript Execution context
+
+Single threaded
+
+Global Execution context
+  |--Function Execution context
+      |-- Eval Execution context
+
+The call stack is a data structure used by JavaScript (and many other languages) to keep track of function calls.
+Think of it like a stack of plates:
+You add (push) a new plate (function call) on top when a function is invoked.
+You remove (pop) the plate off when the function finishes.
+

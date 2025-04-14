@@ -143,3 +143,43 @@ Helps keep your code organized and predictable.
 
 
 // make sure to use ";" after the iife as sometimes it needs to be closed manually and by adding ";" we end it.
+
+⚙️ Eval Execution Context
+When eval() is called, JavaScript creates a special execution context just for that eval() call.
+
+There are two modes:
+
+Direct eval – runs in the same scope
+
+function test() {
+  var a = 5;
+  eval("var b = 10;");
+  console.log(a); // 5
+  console.log(b); // 10 → b is added to the local scope
+}
+test();
+
+✅ Here, eval() creates an eval execution context inside the function execution context, so b is local.
+
+
+Indirect eval – runs in the global scope
+
+(function(){
+  var a = 5;
+  (0, eval)("var b = 10;");
+  console.log(typeof b); // 'number'
+})();
+console.log(b); // 10 → b is in the global scope
+
+❌ By calling eval() indirectly ((0, eval)), it creates a global context eval instead.
+
+
+Why Be Careful with eval()?
+Security risk (can run malicious code)
+
+Performance hit (bypasses optimizations)
+
+Harder to debug
+
+Can pollute scopes unexpectedly
+
