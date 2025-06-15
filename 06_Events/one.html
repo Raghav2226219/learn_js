@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color:azure">
+    <h2>Some Images</h2>
+    <ul id="Images">
+        <li><img width="200px" id="photoshop" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://media.springernature.com/lw703/springer-static/image/art%3A10.1038%2F528452a/MediaObjects/41586_2015_Article_BF528452a_Figg_HTML.jpg" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGhvdWdodHxlbnwwfHwwfHx8MA%3D%3D" alt=""></li>
+        <!-- <li><img width="200px" id="owl" src="https://cdn.pixabay.com/photo/2022/05/10/14/37/glacier-7187291_1280.jpg" alt="" onclick="alert('Owl')"></li> -->
+         <li><img width="200px" id="owl" src="https://cdn.pixabay.com/photo/2022/05/10/14/37/glacier-7187291_1280.jpg" alt="" "></li>
+        <li><img width="200px" id="prayer" src="https://thumbs.dreamstime.com/b/planet-earth-space-night-some-elements-image-furnished-nasa-52734504.jpg" alt=""></li>
+        <li><a style="color: azure;" href="https://google.com" id="google" >Google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById("river").onclick = function(){
+    //     alert("river clicked")
+    // }
+
+    // document.getElementById('japan').addEventListener('click', function(){
+    //     alert("japan clicked")
+    // })
+
+    // // attachEvent() --> used earlier during windows explorer
+    // // jQuery - on --> used with jquery framework
+
+    // document.getElementById('prayer').addEventListener('click', function(e){
+    //     console.log(e);
+    // },false)
+
+    // here "e" is event object
+    // to read here 
+    // -> type
+    // -> timestamp
+    // -> defaultPrevented
+    // -> target
+    // -> toElement
+    // -> srcElement
+    // -> currentTarget
+    // -> clientX
+    // -> clientY
+    // -> screenX
+    // -> screenY
+    // -> altkey
+    // -> ctrlkey
+    // -> shiftkey
+    // -> keyCode
+
+    // event propagation  -> event bubbling
+                        //-> event capturing
+
+    // document.getElementById('Images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // },true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("clicked owl");
+    // },true)
+
+    // ^ here first it will print ul than owl as it goes from outside to inside
+
+    // document.getElementById('Images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // })
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("clicked owl");
+    //     e.stopPropagation(); // yeah use karne se event bubble hoke upar nhi jaye ga
+    // })
+
+    // ^ here first it will print owl than ul as it works from inside to outside
+
+
+    /*
+        event propagation occurs in three main phases: capturing, target, and bubbling.
+
+The capturing phase (also known as the trickling phase) is when the event starts from the top of the DOM tree and travels down toward the target element. This phase is not triggered by default and must be explicitly enabled by passing true as the third argument in addEventListener, like addEventListener('click', handler, true).
+
+The target phase is the point at which the event reaches the element that was actually clicked or interacted with. This phase is always triggered by default and handled normally within event listeners.
+
+Finally, the bubbling phase is when the event bubbles back up from the target element to the root of the DOM tree. This is the default behavior in JavaScript, and event listeners respond to it unless capturing is explicitly specified. You can use addEventListener('click', handler, false) or omit the third parameter (as false is the default) to register an event handler for the bubbling phase.
+
+    */
+
+//     document.getElementById('google').addEventListener('click', function(e) {
+//   e.preventDefault(); // prevent link from navigating
+//   e.stopPropagation();
+//   console.log('clicked google');
+// }, false);
+
+
+    document.querySelector('#Images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+
+        let remo = e.target.parentNode;
+        // remo.remove();
+
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+             let remo = e.target.parentNode;
+        remo.remove();
+        }
+
+        remo.parentNode.removeChild(remo);
+    })
+
+</script>
+</html>
