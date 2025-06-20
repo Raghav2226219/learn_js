@@ -183,3 +183,7 @@ Harder to debug
 
 Can pollute scopes unexpectedly
 
+// ---->
+
+Async code
+
